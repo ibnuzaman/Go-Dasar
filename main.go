@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //int satu := 1
 
@@ -39,7 +41,9 @@ func main() {
 	// Slice()
 	// AppendInSlice()
 	// MakeInSlice()
-	CopyInSlice()
+	// CopyInSlice()
+	// Mapping()
+	SwitchKondisi()
 
 }
 
@@ -147,4 +151,35 @@ func CopyInSlice() {
 	copy(slice2, slice1)
 	fmt.Println(slice1)
 	fmt.Println(slice2)
+}
+
+func Mapping() {
+	pepek := map[string]int{
+		"nama":   1234,
+		"alamat": 41321,
+	}
+	delete(pepek, "alamat")
+
+	fmt.Println(pepek)
+	// fmt.Println(pepek["alamat"])
+}
+
+func SwitchKondisi() {
+
+	nama := "d"
+	length := len(nama)
+	// switch length := len(nama); length > 100 {
+	// case true:
+	// 	fmt.Println("pepek")
+	// case false:
+	// 	fmt.Println("salah")
+	// 	fmt.Println(len(nama))
+	// }
+	switch {
+	case length > 6:
+		fmt.Println("bener")
+	case length < 5:
+		fmt.Println("kine lima")
+	}
+
 }
