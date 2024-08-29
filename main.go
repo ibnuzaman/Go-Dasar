@@ -43,7 +43,25 @@ func main() {
 	// MakeInSlice()
 	// CopyInSlice()
 	// Mapping()
-	SwitchKondisi()
+	// SwitchKondisi()
+	// IterationWithRange()
+	// BreakAndContinue()
+	// fmt.Println(FungsiParameter("Ibnu"))
+	// fmt.Println(MultipleValues())
+
+	// Multiple Values
+	// namaDepan, namaBelakang := MultipleValues()
+	// fmt.Println(namaDepan, namaBelakang)
+
+	// Mengambil Value 1 dari Multiple Values
+	// namaDepan, _ := MultipleValues()
+	// fmt.Println(namaDepan)
+
+	// fmt.Println(Variadic(10, 10, 10, 10))
+
+	FungctionAsParameter("andika", Pasangan)
+	pacar := Pasangan
+	FungctionAsParameter("laki laki", pacar)
 
 }
 
@@ -181,5 +199,55 @@ func SwitchKondisi() {
 	case length < 5:
 		fmt.Println("kine lima")
 	}
+}
 
+func IterationWithRange() {
+	nama := []string{
+		"ibnu",
+		"zaman",
+	}
+
+	for index, names := range nama {
+		fmt.Println("index", index, "=", names)
+	}
+}
+
+func BreakAndContinue() {
+	for i := 1; i < 10; i++ {
+		if i == 5 {
+			fmt.Println("break")
+			continue
+		}
+		if i == 9 {
+			fmt.Println("break")
+		}
+		fmt.Println("lanjut")
+	}
+}
+
+func FungsiParameter(nama string) string {
+	return "namanya : " + nama
+}
+
+func MultipleValues() (string, string) {
+	return "ibnu", "zaman"
+}
+
+func Variadic(angka ...int) int {
+	total := 0
+	for _, angka := range angka {
+		total += angka
+	}
+	return total
+}
+
+func FungctionAsParameter(cowo string, pacar func(string) string) {
+	fmt.Println(cowo, pacar(cowo))
+}
+func Pasangan(cowo string) string {
+	if cowo == "laki laki" {
+		return "gay"
+	} else {
+		return "normal"
+	}
 }
