@@ -59,11 +59,59 @@ func main() {
 
 	// fmt.Println(Variadic(10, 10, 10, 10))
 
-	FungctionAsParameter("andika", Pasangan)
-	pacar := Pasangan
-	FungctionAsParameter("laki laki", pacar)
+	// FungctionAsParameter("andika", Pasangan)
+	// pacar := Pasangan
+	// FungctionAsParameter("laki laki", pacar)
 
+	// TypeDeclarations("zaman", asFilter)
+
+	// func() {
+	// 	fmt.Println("test anonim")
+	// }()
+
+	// f := func() {
+	// 	fmt.Println("fungsi anonim dalam variabel")
+	// }
+	// f()
+
+	// f := func(n int) {
+	// 	fmt.Println("fungsi anonim dalam variabel: ", n)
+	// }
+	// f(45)
+
+	// f := func(s string) {
+	// 	fmt.Println(s)
+	// }
+	// func(v string, g func(s string)) {
+	// 	g(v)
+	// }("test", f)
+
+	// square := getAnonymousFunc()
+	// result := square(5)
+	// fmt.Println("Hasil kuadrat:", result)
+
+	// fmt.Println(Recursiv(3))
+
+	// var numbers = []int{2, 3, 0, 4, 3, 2, 0, 4, 2, 0, 3}
+	// var newNumbers = func(min int) []int {
+	// 	var result []int
+	// 	for _, e := range numbers {
+	// 		if e >= min {
+	// 			result = append(result, e)
+	// 		}
+	// 	}
+	// 	return result
+	// }(3)
+
+	// fmt.Println("Original numbers:", numbers)
+	// fmt.Println("Filtered numbers:", newNumbers)
 }
+
+// func getAnonymousFunc() func(int) int {
+// 	return func(x int) int {
+// 		return x * x
+// 	}
+// }
 
 func MultipleVariabel() {
 	var (
@@ -249,5 +297,27 @@ func Pasangan(cowo string) string {
 		return "gay"
 	} else {
 		return "normal"
+	}
+}
+
+type Filter func(string) string
+
+func TypeDeclarations(nama string, filter Filter) {
+	fmt.Println(nama, filter(nama))
+}
+
+func asFilter(nama string) string {
+	if nama == "ibnu" {
+		return "zaman"
+	} else {
+		return "bukan ibnu"
+	}
+}
+
+func Recursiv(nilai int) int {
+	if nilai == 1 {
+		return 1
+	} else {
+		return nilai * Recursiv(nilai-1)
 	}
 }
